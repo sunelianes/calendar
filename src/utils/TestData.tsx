@@ -25,4 +25,18 @@ export const TestData = [
          location: "A66",
          eventType: CalenderEvent.Lecture,
     },
+    {
+         subjectCode: "INF122",
+         start: new Date(),
+         end: new Date(),
+         location: "A66",
+         eventType: CalenderEvent.Group,
+    },
+    {
+         subjectCode: "INF122",
+         start: new Date(),
+         end: new Date(),
+         location: "A66",
+         eventType: CalenderEvent.Walkthrough,
+    },
 ]
