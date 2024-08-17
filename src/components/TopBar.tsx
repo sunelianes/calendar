@@ -1,0 +1,46 @@
+import {Text, StyleSheet, TouchableOpacity, View} from "react-native";
+import React from "react";
+import Icon from 'react-native-vector-icons/Ionicons';
+
+type TopBarProps = {
+    title: string,
+    onSettingsPress: () => void,
+    onPlusPress: () => void,
+}
+
+const TopBar: React.FC<TopBarProps> = ({ title, onSettingsPress, onPlusPress }) => {
+    return (
+        <View style={styles.container}>
+            <TouchableOpacity onPress={onSettingsPress} style={styles.button}>
+                <Icon name="settings-outline" size={25} color="#000" />
+            </TouchableOpacity>
+            <Text style={styles.title}>{title}</Text>
+            <TouchableOpacity onPress={onPlusPress} style={styles.button}>
+                <Icon name="add-outline" size={25} color="#000" />
+            </TouchableOpacity>
+        </View>
+    );
+};
+
+const styles = StyleSheet.create({
+    container: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingHorizontal: 15,
+        height: 60,
+        backgroundColor: '#f8f8f8',
+        borderBottomWidth: 1,
+        borderBottomColor: '#ddd',
+    },
+    button: {
+        padding: 10,
+    },
+    title: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: '#000',
+    },
+});
+
+export default TopBar;
