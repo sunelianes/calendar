@@ -16,7 +16,11 @@ export const CalendarItem: React.FC<CalendarItemProps> = (props: CalendarItemPro
         <View style={styles.item}>
             <Text style={styles.header}>{start.toDateString()}.</Text>
             <Text>{subjectCode} {eventType.toString()}</Text>
-            <Text>{start.getHours()}:{start.getMinutes() < 10 ? 0 : ''}{start.getMinutes()} - {end.getHours()}:{end.getMinutes() < 10 ? 0 : ''}{end.getMinutes()}</Text>
+            <Text>
+                {start.getHours() < 10 ? 0 : ''}{start.getHours()}:{start.getMinutes() < 10 ? 0 : ''}{start.getMinutes()}
+                -
+                {end.getHours() < 10 ? 0 : ''}{start.getHours()}:{end.getMinutes() < 10 ? 0 : ''}{end.getMinutes()}
+            </Text>
             <Text>{location}</Text>
         </View>
     )
