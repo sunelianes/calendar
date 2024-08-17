@@ -1,5 +1,5 @@
-enum CalenderEvent {
-    Lecture = "LECTURE",
-    Group = "GROUP",
-    Walkthrough = "WALKTHROUGH"
+export enum CalenderEvent {
+    Lecture = "Lecture",
+    Group = "Group Session",
+    Walkthrough = "Walkthrough"
 }
