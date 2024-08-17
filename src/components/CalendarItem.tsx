@@ -16,7 +16,7 @@ export const CalendarItem: React.FC<CalendarItemProps> = (props: CalendarItemPro
         <View style={styles.item}>
             <Text style={styles.header}>{start.toDateString()}.</Text>
             <Text>{subjectCode} {eventType.toString()}</Text>
-            <Text>{start.getTime()} - {end.getTime()}</Text>
+            <Text>{start.getHours()}:{start.getMinutes() < 10 ? 0 : ''}{start.getMinutes()} - {end.getHours()}:{end.getMinutes() < 10 ? 0 : ''}{end.getMinutes()}</Text>
             <Text>{location}</Text>
         </View>
     )
@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
     header: {
         fontSize: 20,
         alignSelf: "center",
-        backgroundColor: "red",
         width: "100%",
     }
 })
