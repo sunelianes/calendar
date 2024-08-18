@@ -20,22 +20,27 @@ const App = () => {
         console.log('Plus button pressed');
     };
     return (
-        <SafeAreaView style={styles.container}>
-            <TopBar
-                title="App mf"
-                onSettingsPress={handleSettingsPress}
-                onPlusPress={handlePlusPress}
-            />
-            <FlatList
-                data={DATA}
-                renderItem={({ item }) =>
-                    <CalendarItem
-                        subjectCode={item.subjectCode} start={item.start} end={item.end}
-                        location={item.location} eventType={item.eventType}
-                    />}
-                keyExtractor={(item, index) => index.toString()} // Assuming no unique id, using index as key
-            />
-        </SafeAreaView>
+        <>
+            <SafeAreaView style={styles.topbar}>
+                <StatusBar/>
+            </SafeAreaView>
+            <SafeAreaView style={styles.container}>
+                <TopBar
+                    title="App mf"
+                    onSettingsPress={handleSettingsPress}
+                    onPlusPress={handlePlusPress}
+                />
+                <FlatList style={{paddingTop: 20}}
+                    data={DATA}
+                    renderItem={({ item }) =>
+                        <CalendarItem
+                            subjectCode={item.subjectCode} start={item.start} end={item.end}
+                            location={item.location} eventType={item.eventType}
+                        />}
+                    keyExtractor={(item, index) => index.toString()} // Assuming no unique id, using index as key
+                />
+            </SafeAreaView>
+        </>
     );
 };
 
@@ -43,11 +48,15 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         marginTop: StatusBar.currentHeight || 0,
-        backgroundColor: '#f8f8f8',
+        backgroundColor: '#e8e8e8',
     },
     title: {
         fontSize: 32,
     },
+    topbar: {
+        flex: 0,
+        backgroundColor: '#cb4c4e',
+    }
 });
 
 export default App;
