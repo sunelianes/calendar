@@ -1,4 +1,4 @@
-Calendar app where you add subjects you are currently taking at the Universirty of Bergen.
+Calendar app where you add subjects you are currently taking at the University of Bergen.
 
 Work in progress!
 
